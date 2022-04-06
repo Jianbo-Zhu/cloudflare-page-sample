@@ -17,7 +17,7 @@ jobs:
     - run: npm install -g ghost-static-site-generator
     - run: gssg --domain https://help.testapp.io -url https://help.superjambo.net
     - run: git status
-    - run: git commit -a "auto commit"
+    - run: git commit -a -m "auto commit"
     - name: GitHub Push
       uses: ad-m/github-push-action@v0.6.0
       with:
