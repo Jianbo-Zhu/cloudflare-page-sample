@@ -15,7 +15,7 @@ jobs:
     - run: sudo apt update
     - run: sudo apt install nodejs npm
     - run: npm install -g ghost-static-site-generator
-    - run: gssg --domain https://help.testapp.io -url https://help.superjambo.net
+    - run: gssg --domain "https://help.testapp.io" --url "https://help.superjambo.net"
     - run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
