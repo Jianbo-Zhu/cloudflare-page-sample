@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Circle CI</title>
+<script src="/cdn-cgi/apps/head/7XfeI3OshPls6TXuN8_J-g4q1CQ.js"></script><link href="https://testapp.io/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="https://testapp.io/images/webclip.png" rel="apple-touch-icon">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
+<link href="/assets/css/screen.min.css?v=aa37c1ff2e" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0H8V4FJTB" type="c37743d824bd1d8b9e552368-text/javascript"></script>
+<script type="c37743d824bd1d8b9e552368-text/javascript">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-Y0H8V4FJTB');
+		</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "71494ac2e8664711a113c225f6145c07"}' type="c37743d824bd1d8b9e552368-text/javascript"></script>
+<script type="c37743d824bd1d8b9e552368-text/javascript">
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:2890885,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+<meta name="description" content="Circle CI pipeline to upload both Android &amp; iOS apps to TestApp.io to notify everyone for testing and feedback." />
+<link rel="canonical" href="http://help.superjambo.net/circle-ci/" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<link rel="amphtml" href="http://help.superjambo.net/circle-ci/amp/" />
+<meta property="og:site_name" content="Help Center" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Circle CI" />
+<meta property="og:description" content="Circle CI pipeline to upload both Android &amp; iOS apps to TestApp.io to notify everyone for testing and feedback." />
+<meta property="og:url" content="http://help.superjambo.net/circle-ci/" />
+<meta property="og:image" content="https://f000.backblazeb2.com/file/help-testappio/2022/03/icon_512_o.png" />
+<meta property="article:published_time" content="2022-03-23T13:16:28.000Z" />
+<meta property="article:modified_time" content="2022-03-30T10:14:31.000Z" />
+<meta property="article:tag" content="Integrations" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Circle CI" />
+<meta name="twitter:description" content="Circle CI pipeline to upload both Android &amp; iOS apps to TestApp.io to notify everyone for testing and feedback." />
+<meta name="twitter:url" content="http://help.superjambo.net/circle-ci/" />
+<meta name="twitter:image" content="https://f000.backblazeb2.com/file/help-testappio/2022/03/icon_512_o.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Omar" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Integrations" />
+<meta name="twitter:site" content="@testappio" />
+<meta property="og:image:width" content="512" />
+<meta property="og:image:height" content="512" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Help Center",
+        "url": "http://help.superjambo.net/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://f000.backblazeb2.com/file/help-testappio/2022/03/logo_light.svg"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Omar",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/b8de66d3d3686e8c582b6a2bbc03d090?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "http://help.superjambo.net/author/omar/",
+        "sameAs": []
+    },
+    "headline": "Circle CI",
+    "url": "http://help.superjambo.net/circle-ci/",
+    "datePublished": "2022-03-23T13:16:28.000Z",
+    "dateModified": "2022-03-30T10:14:31.000Z",
+    "keywords": "Integrations",
+    "description": "Circle CI pipeline to upload both Android &amp; iOS apps to TestApp.io to notify everyone for testing and feedback.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://help.superjambo.net/"
+    }
+}
+    </script>
+<meta name="generator" content="Ghost 4.41" />
+<link rel="alternate" type="application/rss+xml" title="Help Center" href="http://help.superjambo.net/rss/" />
+<script defer src="/public/cards.min.js?v=aa37c1ff2e" type="c37743d824bd1d8b9e552368-text/javascript"></script><style>:root {--ghost-accent-color: #396bdb;}</style>
+<link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=aa37c1ff2e">
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body class="post-template tag-integrations">
+<div class="site-wrap">
+<header class="site-header">
+<div class="container flex header-inner">
+<div class="logo">
+<a href="http://help.superjambo.net"><img class="logo-image" src="https://f000.backblazeb2.com/file/help-testappio/2022/03/logo_light.svg" alt="Help Center"></a>
+</div>
+<div class="header-right flex">
+<nav class="nav-wrap">
+<ul class="nav-list">
+<li class="nav-item "><a href="http://help.superjambo.net/">Home</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/faq/">FAQ</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/topic/integrations/">Integrations</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/whats-new/">What&#x27;s New</a></li>
+<li class="nav-item "><a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">Join our Slack</a></li>
+<li class="nav-item member-link">
+<a class="" href="https://portal.testapp.io/signin">Log in</a>
+</li>
+<li class="nav-item member-link">
+<a class="nav-btn" href="https://portal.testapp.io/signup">Sign up</a>
+</li>
+<li class="nav-item"><a href="https://github.com/testappio" class="nav-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github" /></svg>GitHub</a></li>
+</ul>
+</nav> </div>
+<div class="menu-icon" id="menu-toggle">
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</div>
+</div>
+<div class="mobile-nav-wrap" id="mobile-nav">
+<nav class="nav-wrap">
+<ul class="nav-list">
+<li class="nav-item "><a href="http://help.superjambo.net/">Home</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/faq/">FAQ</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/topic/integrations/">Integrations</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/whats-new/">What&#x27;s New</a></li>
+<li class="nav-item "><a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">Join our Slack</a></li>
+<li class="nav-item member-link">
+<a class="" href="https://portal.testapp.io/signin">Log in</a>
+</li>
+<li class="nav-item member-link">
+<a class="nav-btn" href="https://portal.testapp.io/signup">Sign up</a>
+</li>
+<li class="nav-item"><a href="https://github.com/testappio" class="nav-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github" /></svg>GitHub</a></li>
+</ul>
+</nav> </div>
+<div class="backdrop" id="backdrop"></div>
+<div class="secondary-header-bar">
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="breadcrumb">
+<a href="http://help.superjambo.net">Home</a>
+<a href="http://help.superjambo.net/topic/integrations/">Integrations</a>
+<span class="current post-title">Circle CI</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header> <div class="main">
+<div class="container js-main-content-area">
+<div class="row">
+<div class="col-lg-3">
+<aside class="js-sidebar">
+<div class="js-sidebar-inner">
+<div class="form-wrap sidebar-form-wrap">
+<form class="sidebar-search-form js-search-form">
+<div class="input-wrap">
+<input type="text" name="search" class="search-input js-search-input small" id="search-bar" placeholder="Type to search">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 19.29l-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z" /></svg> </div>
+</form>
+<div class="search-result" id="search-results"></div>
+<div class="no-result-message" id="no-result">No result found</div>
+</div> <div class="sidebar-navigation">
+<ul>
+<li id="integrations"><a href="/topic/integrations/">Integrations</a>
+<ul>
+<li id="623b0a290fd8654b26a569d5" class="post-link"><a href="/github-action/">Github Action</a></li>
+<li id="623b0d781b91ba4ba1dd2771" class="post-link"><a href="/ta-cli/">TA-CLI</a></li>
+<li id="623b12ed1b91ba4ba1dd2791" class="post-link"><a href="/microsoft-teams/">Microsoft Teams</a></li>
+<li id="623b1b651b91ba4ba1dd27c0" class="post-link"><a href="/fastlane-plugin/">Fastlane Plugin</a></li>
+<li id="623b1c9a1b91ba4ba1dd27d1" class="post-link"><a href="/circle-ci/">Circle CI</a></li>
+<li id="623b23881b91ba4ba1dd2817" class="post-link"><a href="/gitlab-ci-cd/">Gitlab CI/CD</a></li>
+<li id="623b26281b91ba4ba1dd285f" class="post-link"><a href="/jenkins/">Jenkins</a></li>
+<li id="623b6a0d8ea064535b5a6c04" class="post-link"><a href="/slack-integration/">Slack</a></li>
+<li id="623b6ad18ea064535b5a6c21" class="post-link"><a href="/travis-ci/">Travis CI</a></li>
+</ul>
+</li>
+<li id="portal"><a href="/topic/portal/">Portal</a>
+<ul>
+<li id="623b63038ea064535b5a6b8c" class="post-link"><a href="/walkthrough/">Walkthrough</a></li>
+<li id="623b65658ea064535b5a6bc0" class="post-link"><a href="/how-to-create-a-release/">How to create a release?</a></li>
+<li id="623b68658ea064535b5a6be3" class="post-link"><a href="/how-to-share/">Share your app with external testers</a></li>
+</ul>
+</li>
+<li id="sdk"><a href="/topic/sdk/">SDK</a>
+<ul>
+<li id="623b6b848ea064535b5a6c30" class="post-link"><a href="/sdk-in-app-feedback/">SDK - in-app feedback</a></li>
+</ul>
+</li>
+<li id="upcoming"><a href="/topic/upcoming/">Upcoming</a>
+<ul>
+<li id="623b6b848ea064535b5a6c30" class="post-link"><a href="/sdk-in-app-feedback/">SDK - in-app feedback</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+<script type="c37743d824bd1d8b9e552368-text/javascript">
+    document.getElementById("623b1c9a1b91ba4ba1dd27d1").classList.add('current');
+    document.getElementById("623b1c9a1b91ba4ba1dd27d1").parentElement.parentElement.classList.add('open');
+</script> <div class="col-lg-9">
+<div class="single-post-wrap" id="single-post-wrap">
+<h1 class="post-title">Circle CI</h1>
+<div class="toc-wrap" id="toc-wrap">
+<div class="toc-title h4">Table of contents</div>
+</div>
+<div class="post-content" id="post-content">
+<div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">BETA mode. Your <a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">feedback</a> is highly appreciated!</div></div><p>Circle CI pipeline allows you to build and upload both Android &amp; iOS apps to TestApp.io to notify your testers for testing and feedback.</p><h2 id="configuration">Configuration</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Env Var(s)</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api_token</td>
+<td>You can get it from <a href="https://portal.testapp.io/settings/api-credentials">https://portal.testapp.io/settings/api-credentials</a></td>
+<td>TESTAPPIO_API_TOKEN</td>
+<td></td>
+</tr>
+<tr>
+<td>app_id</td>
+<td>You can get it from your app page at <a href="https://portal.testapp.io/apps?action=select-for-integrations">https://portal.testapp.io/apps</a></td>
+<td>TESTAPPIO_APP_ID</td>
+<td></td>
+</tr>
+<tr>
+<td>release</td>
+<td>It can be either both or Android or iOS</td>
+<td>TESTAPPIO_RELEASE</td>
+<td></td>
+</tr>
+<tr>
+<td>apk_file</td>
+<td>Path to the Android APK file</td>
+<td>TESTAPPIO_ANDROID_PATH</td>
+<td></td>
+</tr>
+<tr>
+<td>ipa_file</td>
+<td>Path to the iOS IPA file</td>
+<td>TESTAPPIO_IOS_PATH</td>
+<td></td>
+</tr>
+<tr>
+<td>release_notes</td>
+<td>Manually add the release notes to be displayed for the testers</td>
+<td>TESTAPPIO_RELEASE_NOTES</td>
+<td></td>
+</tr>
+<tr>
+<td>git_release_notes</td>
+<td>Collect release notes from the latest git commit message to be displayed for the testers: true or false</td>
+<td>TESTAPPIO_GIT_RELEASE_NOTES</td>
+<td>true</td>
+</tr>
+<tr>
+<td>git_commit_id</td>
+<td>Include the last commit ID in the release notes (works with both release notes options): true or false</td>
+<td>TESTAPPIO_GIT_COMMIT_ID</td>
+<td>false</td>
+</tr>
+<tr>
+<td>notify</td>
+<td>Send notifications to your team members about this release: true or false</td>
+<td>TESTAPPIO_NOTIFY</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><em>Check <a href="http://help.superjambo.net/ta-cli/">TA-CLI</a> for more info</em></p>
+<hr><h2 id="ios">iOS</h2>
+<p>Circle CI provides macOS executors to CI/CD pipeline, and it has Fastlane installed already, which means we don't need to install Fastlane in our pipeline.</p>
+<p>We will use the <a href="https://github.com/testappio/ios-sample-app">testappio-ios-sample-app</a> project to demonstrate how to use our <code>ta-cli</code> tool to upload your <em>IPA</em> file to TestApp.io</p>
+<h3 id="setup-circle-ci-project">Setup Circle CI project</h3>
+<p>Setup two project environment variables as below.</p>
+<p><em>Project Settings</em>-&gt;<em>Environment Variables</em>-&gt;<em>Add Environment Variable</em></p>
+<pre><code>TESTAPPIO_API_TOKEN=
+TESTAPPIO_APP_ID=
+</code></pre>
+<p>Check the <a href="#configuration">configuration</a> for more info</p><h3 id="configure-ios-project-for-fastlane">Configure iOS project for Fastlane</h3>
+<ol>
+<li>Install Fastlane<br>
+The below command works for most cases, however, if not, please see <a href="https://docs.fastlane.tools/getting-started/ios/setup/">Setup Fastlane</a></li>
+</ol>
+<pre><code class="language-bash">bundle install fastlane
+</code></pre>
+<ol start="2">
+<li>Init Fastlane</li>
+</ol>
+<p>In the iOS project folder</p>
+<pre><code class="language-bash">bundle exec fastlane init
+</code></pre>
+<p>And follow the wizard, it will create <code>./fastlane/Appfile</code> with your Apple ID and team etc.</p>
+<ol start="3">
+<li>Init <code>Match</code></li>
+</ol>
+<p><a href="https://docs.fastlane.tools/actions/match/">Fastlane <strong>match</strong></a> is a tool for generating all necessary certificates and provisioning profiles and storing them in a Git repository encrypted.</p>
+<p>Create a private empty Github repository for storing certificates and provisioning profiles.</p>
+<pre><code class="language-bash">bundle exec fastlane match init
+</code></pre>
+<p>Follow the instruction, give the new empty Git repository when asked, and it will create the <code>Matchfile</code></p>
+<div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">NOTE: Please use the <strong>Git</strong> address if integrating with Circle CI</div></div><ol start="4">
+<li>Generate the certificate and provision profile</li>
+</ol>
+<pre><code class="language-bash">bundle exec fastlane match adhoc
+</code></pre>
+<p><em>You can use adhoc, development, and enterprise</em></p>
+<p>Following the instruction, it will generate certificates/profiles and store them in the Git repository specified in the previous step.</p>
+<div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">Note: you will be asked to provide a matching password which is used for encrypting the certificates and profiles on the Git repository.</div></div><ol start="5">
+<li>Select provisioning profiles in Xcode</li>
+</ol>
+<p>The newly created certificates and profiles should now be possible to select inside our project.</p>
+<p>Open up Xcode and go to Signing &amp; Capabilities.</p>
+<div class="kg-card kg-callout-card kg-callout-card-red"><div class="kg-callout-emoji">⚠️</div><div class="kg-callout-text">Note: Please don't choose <strong>Automatically manage signing</strong></div></div><ol start="6">
+<li>Using <code>testappio</code> plugin for Fastlane<br>
+In our project folder:</li>
+</ol>
+<pre><code class="language-bash">bundle exec fastlane add_plugin testappio
+</code></pre>
+<ol start="7">
+<li>Upload IPA file to TestApp.io<br>
+Add an action, <strong>upload_to_testappio</strong> the lane looks like below:</li>
+</ol>
+<pre><code class="language-bash"># fastlane/fastfile
+default_platform :ios
+
+platform :ios do
+
+  before_all do
+    setup_circle_ci
+  end
+
+  ...
+
+  desc &quot;Build the adhoc and upload to TestApp.io&quot;
+  lane :beta do
+    match(type: &quot;adhoc&quot;)
+    gym(export_method: &quot;ad-hoc&quot;)
+    upload_to_testappio(
+      release_notes: &quot;My release notes here...&quot;, #TESTAPPIO_RELEASE_NOTES
+      git_release_notes: true, #TESTAPPIO_GIT_RELEASE_NOTES
+      git_commit_id: false, #TESTAPPIO_GIT_COMMIT_ID
+      notify: true #TESTAPPIO_NOTIFY
+    )
+  end
+end
+</code></pre>
+<p>More info for Fastlane plugin: <a href="http://help.superjambo.net/fastlane-plugin/#testappio-actions">http://help.superjambo.net/fastlane-plugin/#testappio-actions</a></p>
+<ol start="8">
+<li>Add one step in the pipeline to install the plugin<br>
+In Circle CI's <code>config.yml</code>, add <code>bundle install</code>, e.g.</li>
+</ol>
+<pre><code class="language-bash"># ...
+adhoc:
+    macos:
+      xcode: 12.5.1
+    steps:
+      # ...
+      - run: bundle install
+      - run: bundle exec fastlane adhoc
+# ...
+</code></pre>
+<ol start="9">
+<li>
+<p>Make sure that the codesign is configured to &quot;manual&quot; or the <code>gym</code> step of the Circle CI pipeline would fail with the error &quot;no provisioning profile found&quot;</p>
+</li>
+<li>
+<p>Push all the changes to the Git repository</p>
+</li>
+</ol>
+<p>Circle CI will build your project and upload your IPA file to TestApp.io for distribution 🎉</p>
+<hr><h2 id="android-project">Android Project</h2>
+<p>We will use the <a href="https://github.com/testappio/android-sample-app">testappio-android-sample</a> project to demonstrate how to use our <code>ta-cli</code> tool to upload your <em>APK</em> file to TestApp.io</p>
+<h3 id="setup-circle-ci-project">Setup Circle CI project</h3>
+<p>Setup two project environment variables as below.</p>
+<p><em>Project Settings</em>-&gt;<em>Environment Variables</em>-&gt;<em>Add Environment Variable</em></p>
+<pre><code>TESTAPPIO_API_TOKEN=
+TESTAPPIO_APP_ID=
+</code></pre>
+<p>Check the <a href="#configuration">configuration</a> for more info</p>
+<h3 id="create-the-circle-ci-pipeline">Create the Circle CI pipeline</h3>
+<p>Create <code>.circleci/config.yml</code> file under to project directory and copy the below snippet.</p>
+<pre><code class="language-bash">version: 2.1
+
+orbs:
+  android: circleci/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a4c5cac0d6cbcdc0e4958a948a97">[email&#160;protected]</a>
+
+jobs:
+  build-and-upload:
+    executor:
+      name: android/android-machine
+    environment:  #You can change the following
+      release_notes: &quot;My release notes here...&quot;
+      git_release_notes: false
+      git_commit_id: false
+      notify: true
+    steps:
+      # Checkout the code as the first step.
+      - checkout
+      
+      # And next run the debug build
+      - run:
+          name: Assemble debug build
+          command: |
+            ./gradlew assembleDebug
+      - run:
+          name: upload to TestApp.io
+          command: |
+            export INSTALL_DIR=/tmp
+            curl -Ls https://github.com/testappio/cli/releases/latest/download/install | bash
+            $INSTALL_DIR/ta-cli publish --api_token=$TESTAPPIO_API_TOKEN --app_id=$TESTAPPIO_APP_ID --release=&quot;android&quot; --apk=./app/build/outputs/apk/debug/app-debug.apk --release_notes=$release_notes --notify=$notify --git_release_notes=$git_release_notes --git_commit_id=$git_commit_id --source=&quot;Circle CI&quot;   
+            
+workflows:
+  default: 
+    jobs:
+      - build-and-upload
+</code></pre>
+<p>If you already have the <code>.circleci/config.yml</code> file, you could copy the <code>build-and-upload</code> job to your pipeline.</p>
+<hr><p>If you want to choose the <code>release</code> version job:</p>
+<pre><code class="language-bash">      # And next run the release build
+      - run:
+          name: Assemble release build
+          command: |
+            ./gradlew assembleRelease
+      - run:
+          name: upload to TestApp.io
+          command: |
+            export INSTALL_DIR=/tmp
+            curl -Ls https://github.com/testappio/cli/releases/latest/download/install | bash
+            $INSTALL_DIR/ta-cli publish --api_token=$TESTAPPIO_API_TOKEN --app_id=$TESTAPPIO_APP_ID --release=&quot;android&quot; --apk=./app/build/outputs/apk/release/app-release.apk --release_notes=$release_notes --notify=$notify --git_release_notes=$git_release_notes --git_commit_id=$git_commit_id --source=&quot;Circle CI&quot; 
+</code></pre>
+<hr><h2 id="feedback-support">Feedback &amp; Support</h2>
+<p>Developers built <a href="https://testapp.io">TestApp.io</a> to solve the pain of app distribution for mobile app development teams.</p>
+<p>Join our <a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">Slack</a> channel for feedback and support.</p>
+<p>Happy releasing 🎉</p>
+<p></p>
+</div>
+<div class="post-footer">
+<div class="dates">
+<time class="date-publish" datetime="2022-03-23"><strong>Published:</strong> March 23, 2022</time>
+<time class="date-update" datetime="2022-03-30"><strong>Last updated:</strong> March 30, 2022</time>
+</div>
+<div class="icons">
+<a href="https://twitter.com/share?text=Circle%20CI&amp;url=http://help.superjambo.net/circle-ci/" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(this.href, 'twitter-share', 'width=580,height=296');return false;" class="tooltip" data-tlite="Tweet this" data-cf-modified-c37743d824bd1d8b9e552368-=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.08 20A11.07 11.07 0 0 0 19.52 9 8.09 8.09 0 0 0 21 6.16a.44.44 0 0 0-.62-.51 1.88 1.88 0 0 1-2.16-.38 3.89 3.89 0 0 0-5.58-.17A4.13 4.13 0 0 0 11.49 9C8.14 9.2 5.84 7.61 4 5.43a.43.43 0 0 0-.75.24 9.68 9.68 0 0 0 4.6 10.05A6.73 6.73 0 0 1 3.38 18a.45.45 0 0 0-.14.84A11 11 0 0 0 8.08 20" /></svg></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://help.superjambo.net/circle-ci/" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="tooltip" data-tlite="Share on facebook" data-cf-modified-c37743d824bd1d8b9e552368-=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3.5a.5.5 0 0 0-.5-.5H14a4.77 4.77 0 0 0-5 4.5v2.7H6.5a.5.5 0 0 0-.5.5v2.6a.5.5 0 0 0 .5.5H9v6.7a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-6.7h2.62a.5.5 0 0 0 .49-.37l.72-2.6a.5.5 0 0 0-.48-.63H13V7.5a1 1 0 0 1 1-.9h2.5a.5.5 0 0 0 .5-.5z" /></svg></a>
+<a href="#" class="tooltip js-copy-link" data-tlite="Copy link" data-clipboard-text="http://help.superjambo.net/circle-ci/" onclick="if (!window.__cfRLUnblockHandlers) return false; return false;" data-cf-modified-c37743d824bd1d8b9e552368-=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.29 9.29l-4 4a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4-4a1 1 0 0 0-1.42-1.42z" /><path d="M12.28 17.4L11 18.67a4.2 4.2 0 0 1-5.58.4 4 4 0 0 1-.27-5.93l1.42-1.43a1 1 0 0 0 0-1.42 1 1 0 0 0-1.42 0l-1.27 1.28a6.15 6.15 0 0 0-.67 8.07 6.06 6.06 0 0 0 9.07.6l1.42-1.42a1 1 0 0 0-1.42-1.42z" /><path d="M19.66 3.22a6.18 6.18 0 0 0-8.13.68L10.45 5a1.09 1.09 0 0 0-.17 1.61 1 1 0 0 0 1.42 0L13 5.3a4.17 4.17 0 0 1 5.57-.4 4 4 0 0 1 .27 5.95l-1.42 1.43a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l1.42-1.42a6.06 6.06 0 0 0-.6-9.06z" /></svg></a>
+<a href="#" class="tooltip js-print" data-tlite="Print this page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.36 7H18V5a1.92 1.92 0 0 0-1.83-2H7.83A1.92 1.92 0 0 0 6 5v2H4.64A2.66 2.66 0 0 0 2 9.67v6.66A2.66 2.66 0 0 0 4.64 19h.86a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2h.86A2.66 2.66 0 0 0 22 16.33V9.67A2.66 2.66 0 0 0 19.36 7zM8 5h8v2H8zm-.5 14v-4h9v4z" /></svg></a>
+</div>
+</div>
+</div>
+<div class="prev-next-wrap flex">
+<div class="prev" id="prev-post">
+<a href="#">
+<div class="label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z" /></svg> Previous</div>
+<h4 class="title"></h4>
+</a>
+</div>
+<div class="next" id="next-post">
+<a href="#">
+<div class="label">Next <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13h11.86l-3.63 4.36a1 1 0 0 0 1.54 1.28l5-6a1.19 1.19 0 0 0 .09-.15c0-.05.05-.08.07-.13A1 1 0 0 0 20 12a1 1 0 0 0-.07-.36c0-.05-.05-.08-.07-.13a1.19 1.19 0 0 0-.09-.15l-5-6A1 1 0 0 0 14 5a1 1 0 0 0-.64.23 1 1 0 0 0-.13 1.41L16.86 11H5a1 1 0 0 0 0 2z" /></svg></div>
+<h4 class="title"></h4>
+</a>
+</div>
+</div> <div class="comment-container">
+<div class="disqus-comment-wrap"></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="c37743d824bd1d8b9e552368-text/javascript">
+        var disqus_shortname = 'help-center-7'; // required: replace example with your forum shortname
+        var pageUrl = 'http://help.superjambo.net/circle-ci/';
+        var pageIdentifier = 'ghost-623b1c9a1b91ba4ba1dd27d1';
+    </script>
+</div>
+</div>
+</div>
+</div>
+<section class="contact-cta">
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="contact-cta-wrap flex">
+<div class="content">
+<h2 class="title">Need help?</h2>
+<p class="description">Have you any question which is not answered in this knowledge base? Contact us. We are here to help you.</p>
+</div>
+<div class="">
+<a href="https://testapp.io/contact" class="btn btn-primary">Contact us</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></div>
+<footer class="footer">
+<div class="footer-bottom">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<nav class="secondary-nav text-center">
+<ul>
+<li class="nav-item "><a href="https://portal.testapp.io/">Sign up</a></li>
+</ul>
+</nav> </div>
+<div class="col-12">
+<div class="social-links text-center">
+<a href="https://www.linkedin.com/company/testappio" title="LinkedIn" rel="noopener" class="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg></a>
+<a href="https://twitter.com/testappio" title="Twitter" rel="noopener" class="tooltip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.08 20A11.07 11.07 0 0 0 19.52 9 8.09 8.09 0 0 0 21 6.16a.44.44 0 0 0-.62-.51 1.88 1.88 0 0 1-2.16-.38 3.89 3.89 0 0 0-5.58-.17A4.13 4.13 0 0 0 11.49 9C8.14 9.2 5.84 7.61 4 5.43a.43.43 0 0 0-.75.24 9.68 9.68 0 0 0 4.6 10.05A6.73 6.73 0 0 1 3.38 18a.45.45 0 0 0-.14.84A11 11 0 0 0 8.08 20" /></svg></a>
+<a href="https://github.com/testappio" title="GitHub" rel="noopener" class="tooltip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github" /></svg></a>
+</div> </div>
+<div class="col-12">
+<div class="copyright text-center">
+Built with ♡ by developers for developers
+<br /><br />
+&copy; 2022 <a href="https://testapp.io">TestApp.io</a> - All right Reserved.
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<a href="#" id="back-to-top" class="flex back-top-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.23 10.64a1 1 0 0 0 1.41.13L11 7.14V19a1 1 0 0 0 2 0V7.14l4.36 3.63a1 1 0 1 0 1.28-1.54l-6-5-.15-.09-.13-.07a1 1 0 0 0-.72 0l-.13.07-.15.09-6 5a1 1 0 0 0-.13 1.41z" /></svg></a>
+<div class="notification notification-copy-link">
+Link copied to clipboard.
+</div>
+<div class="notification notification-subscribe text-center">
+You&#x27;ve successfully subscribed to Help Center
+</div>
+<div class="notification notification-signup text-center">
+Great! Next, complete checkout for full access to Help Center
+</div>
+<div class="notification notification-signin text-center">
+Welcome back! You&#x27;ve successfully signed in.
+</div>
+<div class="notification notification-signin-failure error text-center">
+Unable to sign you in. Please try again.
+</div>
+<div class="notification notification-checkout text-center">
+Success! Your account is fully activated, you now have access to all content.
+</div>
+<div class="notification notification-billing-success text-center">
+Success! Your billing info is updated.
+</div>
+<div class="notification notification-billing-cancel error text-center">
+Billing info update failed.
+</div> </div>
+<script type="c37743d824bd1d8b9e552368-text/javascript">
+			var apiKey = 'bad0cef38549feede9756dc408';
+            var nextPage = '';
+            var totalPages = '';
+			var loadingText ='Loading...';
+        </script>
+<script src="/assets/js/app.bundle.min.js?v=aa37c1ff2e" type="c37743d824bd1d8b9e552368-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="c37743d824bd1d8b9e552368-|49" defer=""></script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6f78f6915c619815',m:'Vp2RRSUl2hYj6vsMABWWSzjD0ABwgwqf2uitPxEtxt4-1649231747-0-AYmSgXrsOZGOCmg4a5Nx6MCrC9Src3AWTSh3agCoPL/p22rTmwOGYSzjvSspzCuZWmYOV3jVLKWTqCgBMnLPioMw1yDhmbtBWASYNAoX2U4gJy9TYVIOatlTr85ylrITRw==',s:[0xbfb29b56bc,0xf19a726759],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6f78f6915c619815","token":"1fc43829286d4337ab48afb37bb291a7","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

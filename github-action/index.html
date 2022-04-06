@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>TestApp.io - Github Actions</title>
+<script src="/cdn-cgi/apps/head/7XfeI3OshPls6TXuN8_J-g4q1CQ.js"></script><link href="https://testapp.io/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+<link href="https://testapp.io/images/webclip.png" rel="apple-touch-icon">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
+<link href="/assets/css/screen.min.css?v=aa37c1ff2e" rel="stylesheet">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0H8V4FJTB" type="fdabce119e8237d31de35d98-text/javascript"></script>
+<script type="fdabce119e8237d31de35d98-text/javascript">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-Y0H8V4FJTB');
+		</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "71494ac2e8664711a113c225f6145c07"}' type="fdabce119e8237d31de35d98-text/javascript"></script>
+<script type="fdabce119e8237d31de35d98-text/javascript">
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:2890885,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+<meta name="description" content="Build and upload both your Android (APK) &amp; iOS (IPA) to notify your testers for testing and feedback" />
+<link rel="canonical" href="http://help.superjambo.net/github-action/" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<link rel="amphtml" href="http://help.superjambo.net/github-action/amp/" />
+<meta property="og:site_name" content="Help Center" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="TestApp.io - Github Actions" />
+<meta property="og:description" content="Build and upload both your Android (APK) &amp; iOS (IPA) to notify your testers for testing and feedback" />
+<meta property="og:url" content="http://help.superjambo.net/github-action/" />
+<meta property="og:image" content="https://f000.backblazeb2.com/file/help-testappio/2022/03/github_action_release_o.png" />
+<meta property="article:published_time" content="2022-03-23T11:57:52.000Z" />
+<meta property="article:modified_time" content="2022-03-30T10:14:53.000Z" />
+<meta property="article:tag" content="Integrations" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TestApp.io - Github Actions" />
+<meta name="twitter:description" content="Build and upload both your Android (APK) &amp; iOS (IPA) to notify your testers for testing and feedback" />
+<meta name="twitter:url" content="http://help.superjambo.net/github-action/" />
+<meta name="twitter:image" content="https://f000.backblazeb2.com/file/help-testappio/2022/03/github_action_release_o.png" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Omar" />
+<meta name="twitter:label2" content="Filed under" />
+<meta name="twitter:data2" content="Integrations" />
+<meta name="twitter:site" content="@testappio" />
+<meta property="og:image:width" content="960" />
+<meta property="og:image:height" content="574" />
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Help Center",
+        "url": "http://help.superjambo.net/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://f000.backblazeb2.com/file/help-testappio/2022/03/logo_light.svg"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Omar",
+        "image": {
+            "@type": "ImageObject",
+            "url": "//www.gravatar.com/avatar/b8de66d3d3686e8c582b6a2bbc03d090?s=250&d=mm&r=x",
+            "width": 250,
+            "height": 250
+        },
+        "url": "http://help.superjambo.net/author/omar/",
+        "sameAs": []
+    },
+    "headline": "TestApp.io - Github Actions",
+    "url": "http://help.superjambo.net/github-action/",
+    "datePublished": "2022-03-23T11:57:52.000Z",
+    "dateModified": "2022-03-30T10:14:53.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://f000.backblazeb2.com/file/help-testappio/2022/03/github_action_release_o.png",
+        "width": 960,
+        "height": 574
+    },
+    "keywords": "Integrations",
+    "description": "Build and upload both your Android (APK) &amp; iOS (IPA) to notify your testers for testing and feedback",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://help.superjambo.net/"
+    }
+}
+    </script>
+<meta name="generator" content="Ghost 4.41" />
+<link rel="alternate" type="application/rss+xml" title="Help Center" href="http://help.superjambo.net/rss/" />
+<script defer src="/public/cards.min.js?v=aa37c1ff2e" type="fdabce119e8237d31de35d98-text/javascript"></script><style>:root {--ghost-accent-color: #396bdb;}</style>
+<link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=aa37c1ff2e">
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body class="post-template tag-integrations">
+<div class="site-wrap">
+<header class="site-header">
+<div class="container flex header-inner">
+<div class="logo">
+<a href="http://help.superjambo.net"><img class="logo-image" src="https://f000.backblazeb2.com/file/help-testappio/2022/03/logo_light.svg" alt="Help Center"></a>
+</div>
+<div class="header-right flex">
+<nav class="nav-wrap">
+<ul class="nav-list">
+<li class="nav-item "><a href="http://help.superjambo.net/">Home</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/faq/">FAQ</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/topic/integrations/">Integrations</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/whats-new/">What&#x27;s New</a></li>
+<li class="nav-item "><a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">Join our Slack</a></li>
+<li class="nav-item member-link">
+<a class="" href="https://portal.testapp.io/signin">Log in</a>
+</li>
+<li class="nav-item member-link">
+<a class="nav-btn" href="https://portal.testapp.io/signup">Sign up</a>
+</li>
+<li class="nav-item"><a href="https://github.com/testappio" class="nav-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github" /></svg>GitHub</a></li>
+</ul>
+</nav> </div>
+<div class="menu-icon" id="menu-toggle">
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span>
+</div>
+</div>
+<div class="mobile-nav-wrap" id="mobile-nav">
+<nav class="nav-wrap">
+<ul class="nav-list">
+<li class="nav-item "><a href="http://help.superjambo.net/">Home</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/faq/">FAQ</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/topic/integrations/">Integrations</a></li>
+<li class="nav-item "><a href="http://help.superjambo.net/whats-new/">What&#x27;s New</a></li>
+<li class="nav-item "><a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">Join our Slack</a></li>
+<li class="nav-item member-link">
+<a class="" href="https://portal.testapp.io/signin">Log in</a>
+</li>
+<li class="nav-item member-link">
+<a class="nav-btn" href="https://portal.testapp.io/signup">Sign up</a>
+</li>
+<li class="nav-item"><a href="https://github.com/testappio" class="nav-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github" /></svg>GitHub</a></li>
+</ul>
+</nav> </div>
+<div class="backdrop" id="backdrop"></div>
+<div class="secondary-header-bar">
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="breadcrumb">
+<a href="http://help.superjambo.net">Home</a>
+<a href="http://help.superjambo.net/topic/integrations/">Integrations</a>
+<span class="current post-title">Github Action</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header> <div class="main">
+<div class="container js-main-content-area">
+<div class="row">
+<div class="col-lg-3">
+<aside class="js-sidebar">
+<div class="js-sidebar-inner">
+<div class="form-wrap sidebar-form-wrap">
+<form class="sidebar-search-form js-search-form">
+<div class="input-wrap">
+<input type="text" name="search" class="search-input js-search-input small" id="search-bar" placeholder="Type to search">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 19.29l-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z" /></svg> </div>
+</form>
+<div class="search-result" id="search-results"></div>
+<div class="no-result-message" id="no-result">No result found</div>
+</div> <div class="sidebar-navigation">
+<ul>
+<li id="integrations"><a href="/topic/integrations/">Integrations</a>
+<ul>
+<li id="623b0a290fd8654b26a569d5" class="post-link"><a href="/github-action/">Github Action</a></li>
+<li id="623b0d781b91ba4ba1dd2771" class="post-link"><a href="/ta-cli/">TA-CLI</a></li>
+<li id="623b12ed1b91ba4ba1dd2791" class="post-link"><a href="/microsoft-teams/">Microsoft Teams</a></li>
+<li id="623b1b651b91ba4ba1dd27c0" class="post-link"><a href="/fastlane-plugin/">Fastlane Plugin</a></li>
+<li id="623b1c9a1b91ba4ba1dd27d1" class="post-link"><a href="/circle-ci/">Circle CI</a></li>
+<li id="623b23881b91ba4ba1dd2817" class="post-link"><a href="/gitlab-ci-cd/">Gitlab CI/CD</a></li>
+<li id="623b26281b91ba4ba1dd285f" class="post-link"><a href="/jenkins/">Jenkins</a></li>
+<li id="623b6a0d8ea064535b5a6c04" class="post-link"><a href="/slack-integration/">Slack</a></li>
+<li id="623b6ad18ea064535b5a6c21" class="post-link"><a href="/travis-ci/">Travis CI</a></li>
+</ul>
+</li>
+<li id="portal"><a href="/topic/portal/">Portal</a>
+<ul>
+<li id="623b63038ea064535b5a6b8c" class="post-link"><a href="/walkthrough/">Walkthrough</a></li>
+<li id="623b65658ea064535b5a6bc0" class="post-link"><a href="/how-to-create-a-release/">How to create a release?</a></li>
+<li id="623b68658ea064535b5a6be3" class="post-link"><a href="/how-to-share/">Share your app with external testers</a></li>
+</ul>
+</li>
+<li id="sdk"><a href="/topic/sdk/">SDK</a>
+<ul>
+<li id="623b6b848ea064535b5a6c30" class="post-link"><a href="/sdk-in-app-feedback/">SDK - in-app feedback</a></li>
+</ul>
+</li>
+<li id="upcoming"><a href="/topic/upcoming/">Upcoming</a>
+<ul>
+<li id="623b6b848ea064535b5a6c30" class="post-link"><a href="/sdk-in-app-feedback/">SDK - in-app feedback</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+<script type="fdabce119e8237d31de35d98-text/javascript">
+    document.getElementById("623b0a290fd8654b26a569d5").classList.add('current');
+    document.getElementById("623b0a290fd8654b26a569d5").parentElement.parentElement.classList.add('open');
+</script> <div class="col-lg-9">
+<div class="single-post-wrap" id="single-post-wrap">
+<h1 class="post-title">Github Action</h1>
+<div class="featured-image-wrap">
+<img src="https://f000.backblazeb2.com/file/help-testappio/2022/03/github_action_release_o.png" alt="" class="feature-image">
+</div>
+<div class="toc-wrap" id="toc-wrap">
+<div class="toc-title h4">Table of contents</div>
+</div>
+<div class="post-content" id="post-content">
+<div class="kg-card kg-callout-card kg-callout-card-grey"><div class="kg-callout-emoji">💡</div><div class="kg-callout-text">BETA mode. Your <a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">feedback</a> is highly appreciated!</div></div><p>GitHub Actions makes it easy to <strong>automate all your software workflows</strong> with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.</p><p>Adding our <a href="https://github.com/marketplace/actions/testapp-io-app-distribution">action</a> to your repo will automatically build and upload the APK for the Android app &amp; the IPA for the iOS app to <a href="https://testapp.io/">TestApp.io app distribution</a> and notify all testers to test it and share feedback.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://f000.backblazeb2.com/file/help-testappio/2022/03/testapp.io-github-action-running_o.png" class="kg-image" alt loading="lazy" width="2848" height="1462"><figcaption>TestApp.io Github Action for Linux and macOS</figcaption></figure><p><a href="https://github.com/testappio/github-action/actions/workflows/main.yml"><img src="https://github.com/testappio/github-action/actions/workflows/main.yml/badge.svg" alt="Workflow to upload apk and ipa to TestApp.io app distribution" loading="lazy"></a></p>
+<p>This action uploads artifacts (.apk or .ipa) to TestApp.io and notifies your team members.</p>
+<pre><code class="language-bash">- name: TestApp.io App Distribution
+  uses: testappio/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="214648554954430c404255484e4f615714">[email&#160;protected]</a>
+</code></pre>
+<div class="kg-card kg-button-card kg-align-center"><a href="https://github.com/marketplace/actions/testapp-io-app-distribution" class="kg-btn kg-btn-accent">Get it from Github Actions Marketplace</a></div><hr><h2 id="requirements">Requirements</h2>
+<p>This action will <strong>execute on runners with Ubuntu &amp; macOS operating systems</strong>.</p>
+<h2 id="configuration">Configuration</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Env Var(s)</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>api_token</td>
+<td>You can get it from <a href="https://portal.testapp.io/settings/api-credentials">https://portal.testapp.io/settings/api-credentials</a></td>
+<td>TESTAPPIO_API_TOKEN</td>
+<td></td>
+</tr>
+<tr>
+<td>app_id</td>
+<td>You can get it from your app page at <a href="https://portal.testapp.io/apps?action=select-for-integrations">https://portal.testapp.io/apps</a></td>
+<td>TESTAPPIO_APP_ID</td>
+<td></td>
+</tr>
+<tr>
+<td>release</td>
+<td>It can be either both or Android or iOS</td>
+<td>TESTAPPIO_RELEASE</td>
+<td></td>
+</tr>
+<tr>
+<td>apk_file</td>
+<td>Path to the Android APK file</td>
+<td>TESTAPPIO_ANDROID_PATH</td>
+<td></td>
+</tr>
+<tr>
+<td>ipa_file</td>
+<td>Path to the iOS IPA file</td>
+<td>TESTAPPIO_IOS_PATH</td>
+<td></td>
+</tr>
+<tr>
+<td>release_notes</td>
+<td>Manually add the release notes to be displayed for the testers</td>
+<td>TESTAPPIO_RELEASE_NOTES</td>
+<td></td>
+</tr>
+<tr>
+<td>git_release_notes</td>
+<td>Collect release notes from the latest git commit message to be displayed for the testers: true or false</td>
+<td>TESTAPPIO_GIT_RELEASE_NOTES</td>
+<td>true</td>
+</tr>
+<tr>
+<td>include_git_commit_id</td>
+<td>Include the last commit ID in the release notes (works with both release notes options): true or false</td>
+<td>TESTAPPIO_GIT_COMMIT_ID</td>
+<td>false</td>
+</tr>
+<tr>
+<td>notify</td>
+<td>Send notifications to your team members about this release: true or false</td>
+<td>TESTAPPIO_NOTIFY</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><em>Check <a href="http://help.superjambo.net/ta-cli/">TA-CLI</a> for more info</em></p>
+<hr><h2 id="sample-usage-for-android">Sample usage for Android</h2>
+<pre><code class="language-yml">name: Workflow to upload APK to TestApp.io
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26454e43454d495352665014">[email&#160;protected]</a>
+
+      - name: Set up JDK 1.8
+        uses: actions/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0c3d5c4c5c09ddad1c6d1f0c681">[email&#160;protected]</a>
+        with:
+          java-version: 1.8
+          
+      - name: Build release
+        run: ./gradlew assembleDebug
+        
+      - name: Upload APK TestApp.io
+        uses: testappio/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e09071a061b0c430f0d1a0701002e185b">[email&#160;protected]</a>
+        with:
+          api_token: ${{secrets.TESTAPPIO_API_TOKEN}}
+          app_id: ${{secrets.TESTAPPIO_APP_ID}}
+          file: app/build/outputs/apk/debug/app-debug.apk
+          release_notes: &quot;&quot;
+          git_release_notes: true
+          include_git_commit_id: false
+          notify: true
+</code></pre>
+<p>If you want a debug version, replace the following:</p><p><code>run: ./gradlew assembleDebug</code></p>
+<p><code>file: app/build/outputs/apk/debug/app-debug.apk</code></p>
+<p><br></p><h2 id="sample-usage-for-ios">Sample usage for iOS</h2>
+<pre><code class="language-yaml">name: Workflow to upload IPA to TestApp.io
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ios:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="26454e43454d495352665014">[email&#160;protected]</a>
+
+      - name: Build and export iOS
+        uses: yukiarrr/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="472e28346a25322e2b236a2624332e282907317669736977">[email&#160;protected]</a>
+        with:
+          project-path: ios/testappio.xcodeproj
+          workspace-path: ios/testappio.xcworkspace
+          scheme: testappio
+          export-method: ad-hoc
+          configuration: Release
+          output-path: artifacts/output.ipa
+          p12-base64: ${{ secrets.P12_BASE64 }}
+          certificate-password: ${{ secrets.P12_PASSWORD }}
+          mobileprovision-base64: ${{ secrets.ADHOC_MOBILEPROVISION_BASE64 }}
+          code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
+          team-id: ${{ secrets.TEAM_ID }}
+
+      - name: Upload artifact to TestApp.io
+        uses: testappio/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd9a948995889fd09c9e89949293bd8bc8">[email&#160;protected]</a>
+        with:
+          api_token: ${{ secrets.TESTAPPIO_API_TOKEN }}
+          app_id: ${{ secrets.TESTAPPIO_APP_ID }}
+          file: artifacts/output.ipa
+          release_notes: &quot;&quot;
+          git_release_notes: true
+          include_git_commit_id: false
+          notify: true
+</code></pre>
+<p>More info about the iOS build &amp; export action <a href="https://github.com/yukiarrr/ios-build-action">https://github.com/yukiarrr/ios-build-action</a></p><h2 id="install">Install</h2><pre><code class="language-bash">- name: TestApp.io App Distribution
+  uses: testappio/<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3a5d534e524f58175b594e5355547a4c0f">[email&#160;protected]</a>
+</code></pre>
+<div class="kg-card kg-button-card kg-align-center"><a href="https://github.com/marketplace/actions/testapp-io-app-distribution" class="kg-btn kg-btn-accent">Get it from Github Actions Marketplace</a></div><hr><h2 id="feedback-support">Feedback &amp; Support</h2>
+<p>Developers built <a href="https://testapp.io">TestApp.io</a> to solve the pain of app distribution for mobile app development teams.</p>
+<p>Join our <a href="https://join.slack.com/t/testappio/shared_invite/zt-pvpoj3l2-epGYwGTaV3~3~0f7udNWoA">Slack</a> channel for feedback and support.</p>
+<p>Happy releasing 🎉</p>
+<p></p>
+</div>
+<div class="post-footer">
+<div class="dates">
+<time class="date-publish" datetime="2022-03-23"><strong>Published:</strong> March 23, 2022</time>
+<time class="date-update" datetime="2022-03-30"><strong>Last updated:</strong> March 30, 2022</time>
+</div>
+<div class="icons">
+<a href="https://twitter.com/share?text=Github%20Action&amp;url=http://help.superjambo.net/github-action/" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(this.href, 'twitter-share', 'width=580,height=296');return false;" class="tooltip" data-tlite="Tweet this" data-cf-modified-fdabce119e8237d31de35d98-=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.08 20A11.07 11.07 0 0 0 19.52 9 8.09 8.09 0 0 0 21 6.16a.44.44 0 0 0-.62-.51 1.88 1.88 0 0 1-2.16-.38 3.89 3.89 0 0 0-5.58-.17A4.13 4.13 0 0 0 11.49 9C8.14 9.2 5.84 7.61 4 5.43a.43.43 0 0 0-.75.24 9.68 9.68 0 0 0 4.6 10.05A6.73 6.73 0 0 1 3.38 18a.45.45 0 0 0-.14.84A11 11 0 0 0 8.08 20" /></svg></a>
+<a href="https://www.facebook.com/sharer/sharer.php?u=http://help.superjambo.net/github-action/" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="tooltip" data-tlite="Share on facebook" data-cf-modified-fdabce119e8237d31de35d98-=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 3.5a.5.5 0 0 0-.5-.5H14a4.77 4.77 0 0 0-5 4.5v2.7H6.5a.5.5 0 0 0-.5.5v2.6a.5.5 0 0 0 .5.5H9v6.7a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-6.7h2.62a.5.5 0 0 0 .49-.37l.72-2.6a.5.5 0 0 0-.48-.63H13V7.5a1 1 0 0 1 1-.9h2.5a.5.5 0 0 0 .5-.5z" /></svg></a>
+<a href="#" class="tooltip js-copy-link" data-tlite="Copy link" data-clipboard-text="http://help.superjambo.net/github-action/" onclick="if (!window.__cfRLUnblockHandlers) return false; return false;" data-cf-modified-fdabce119e8237d31de35d98-=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.29 9.29l-4 4a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4-4a1 1 0 0 0-1.42-1.42z" /><path d="M12.28 17.4L11 18.67a4.2 4.2 0 0 1-5.58.4 4 4 0 0 1-.27-5.93l1.42-1.43a1 1 0 0 0 0-1.42 1 1 0 0 0-1.42 0l-1.27 1.28a6.15 6.15 0 0 0-.67 8.07 6.06 6.06 0 0 0 9.07.6l1.42-1.42a1 1 0 0 0-1.42-1.42z" /><path d="M19.66 3.22a6.18 6.18 0 0 0-8.13.68L10.45 5a1.09 1.09 0 0 0-.17 1.61 1 1 0 0 0 1.42 0L13 5.3a4.17 4.17 0 0 1 5.57-.4 4 4 0 0 1 .27 5.95l-1.42 1.43a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l1.42-1.42a6.06 6.06 0 0 0-.6-9.06z" /></svg></a>
+<a href="#" class="tooltip js-print" data-tlite="Print this page"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.36 7H18V5a1.92 1.92 0 0 0-1.83-2H7.83A1.92 1.92 0 0 0 6 5v2H4.64A2.66 2.66 0 0 0 2 9.67v6.66A2.66 2.66 0 0 0 4.64 19h.86a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2h.86A2.66 2.66 0 0 0 22 16.33V9.67A2.66 2.66 0 0 0 19.36 7zM8 5h8v2H8zm-.5 14v-4h9v4z" /></svg></a>
+</div>
+</div>
+</div>
+<div class="prev-next-wrap flex">
+<div class="prev" id="prev-post">
+<a href="#">
+<div class="label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z" /></svg> Previous</div>
+<h4 class="title"></h4>
+</a>
+</div>
+<div class="next" id="next-post">
+<a href="#">
+<div class="label">Next <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13h11.86l-3.63 4.36a1 1 0 0 0 1.54 1.28l5-6a1.19 1.19 0 0 0 .09-.15c0-.05.05-.08.07-.13A1 1 0 0 0 20 12a1 1 0 0 0-.07-.36c0-.05-.05-.08-.07-.13a1.19 1.19 0 0 0-.09-.15l-5-6A1 1 0 0 0 14 5a1 1 0 0 0-.64.23 1 1 0 0 0-.13 1.41L16.86 11H5a1 1 0 0 0 0 2z" /></svg></div>
+<h4 class="title"></h4>
+</a>
+</div>
+</div> <div class="comment-container">
+<div class="disqus-comment-wrap"></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="fdabce119e8237d31de35d98-text/javascript">
+        var disqus_shortname = 'help-center-7'; // required: replace example with your forum shortname
+        var pageUrl = 'http://help.superjambo.net/github-action/';
+        var pageIdentifier = 'ghost-623b0a290fd8654b26a569d5';
+    </script>
+</div>
+</div>
+</div>
+</div>
+<section class="contact-cta">
+<div class="container">
+<div class="row">
+<div class="col">
+<div class="contact-cta-wrap flex">
+<div class="content">
+<h2 class="title">Need help?</h2>
+<p class="description">Have you any question which is not answered in this knowledge base? Contact us. We are here to help you.</p>
+</div>
+<div class="">
+<a href="https://testapp.io/contact" class="btn btn-primary">Contact us</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></div>
+<footer class="footer">
+<div class="footer-bottom">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<nav class="secondary-nav text-center">
+<ul>
+<li class="nav-item "><a href="https://portal.testapp.io/">Sign up</a></li>
+</ul>
+</nav> </div>
+<div class="col-12">
+<div class="social-links text-center">
+<a href="https://www.linkedin.com/company/testappio" title="LinkedIn" rel="noopener" class="tooltip"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /></svg></a>
+<a href="https://twitter.com/testappio" title="Twitter" rel="noopener" class="tooltip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.08 20A11.07 11.07 0 0 0 19.52 9 8.09 8.09 0 0 0 21 6.16a.44.44 0 0 0-.62-.51 1.88 1.88 0 0 1-2.16-.38 3.89 3.89 0 0 0-5.58-.17A4.13 4.13 0 0 0 11.49 9C8.14 9.2 5.84 7.61 4 5.43a.43.43 0 0 0-.75.24 9.68 9.68 0 0 0 4.6 10.05A6.73 6.73 0 0 1 3.38 18a.45.45 0 0 0-.14.84A11 11 0 0 0 8.08 20" /></svg></a>
+<a href="https://github.com/testappio" title="GitHub" rel="noopener" class="tooltip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github" /></svg></a>
+</div> </div>
+<div class="col-12">
+<div class="copyright text-center">
+Built with ♡ by developers for developers
+<br /><br />
+&copy; 2022 <a href="https://testapp.io">TestApp.io</a> - All right Reserved.
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<a href="#" id="back-to-top" class="flex back-top-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.23 10.64a1 1 0 0 0 1.41.13L11 7.14V19a1 1 0 0 0 2 0V7.14l4.36 3.63a1 1 0 1 0 1.28-1.54l-6-5-.15-.09-.13-.07a1 1 0 0 0-.72 0l-.13.07-.15.09-6 5a1 1 0 0 0-.13 1.41z" /></svg></a>
+<div class="notification notification-copy-link">
+Link copied to clipboard.
+</div>
+<div class="notification notification-subscribe text-center">
+You&#x27;ve successfully subscribed to Help Center
+</div>
+<div class="notification notification-signup text-center">
+Great! Next, complete checkout for full access to Help Center
+</div>
+<div class="notification notification-signin text-center">
+Welcome back! You&#x27;ve successfully signed in.
+</div>
+<div class="notification notification-signin-failure error text-center">
+Unable to sign you in. Please try again.
+</div>
+<div class="notification notification-checkout text-center">
+Success! Your account is fully activated, you now have access to all content.
+</div>
+<div class="notification notification-billing-success text-center">
+Success! Your billing info is updated.
+</div>
+<div class="notification notification-billing-cancel error text-center">
+Billing info update failed.
+</div> </div>
+<script type="fdabce119e8237d31de35d98-text/javascript">
+			var apiKey = 'bad0cef38549feede9756dc408';
+            var nextPage = '';
+            var totalPages = '';
+			var loadingText ='Loading...';
+        </script>
+<script src="/assets/js/app.bundle.min.js?v=aa37c1ff2e" type="fdabce119e8237d31de35d98-text/javascript"></script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="fdabce119e8237d31de35d98-|49" defer=""></script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6f78f6509f709444',m:'D5N2Zm6IFVy8eDskCymeH3owump6EMT41Sb5Vbbh46k-1649231736-0-AdRwFV+6q57Gyj0HQBbFW8xFYumMXyBidG7f7IIHPzqJmyQqZTJ1OsX5BbmpFU7N6QtbYKZ35jwWeklui8iiYsVXogHp66s/QG5hiaWZm//XTH+eRJsvC94IGfPE2e4+zA==',s:[0x0730074f2c,0xe94276e6ec],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6f78f6509f709444","token":"1fc43829286d4337ab48afb37bb291a7","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
