@@ -3,12 +3,8 @@
 name: Generate Static Pages
 
 on:
+  repository_dispatch:
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        default: 'World'
-        required: false
 
 jobs:
   generate:
@@ -16,10 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-        cache: 'npm'
+    - run: apt update
+    - run: apt install nodejs npm
     - run: npm install -g ghost-static-site-generator
     - run: gssg --domain https://help.testapp.io -url https://help.superjambo.net
     - name: GitHub Push
