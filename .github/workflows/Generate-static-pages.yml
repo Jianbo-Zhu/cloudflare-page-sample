@@ -16,11 +16,7 @@ jobs:
     - run: sudo apt install nodejs npm
     - run: npm install -g ghost-static-site-generator
     - run: gssg --domain https://help.testapp.io -url https://help.superjambo.net
-    - run: git status
-    - run: git commit -a -m "auto commit"
-    - name: GitHub Push
-      uses: ad-m/github-push-action@v0.6.0
+    - name: Git Commit and Push
+      uses: github-actions-x/commit@v2.8
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
-        directory: static
+        github-token: ${{ secrets.GITHUB_TOKEN }}
