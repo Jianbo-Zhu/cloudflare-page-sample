@@ -1,0 +1,30 @@
+# This is a basic workflow that is manually triggered
+
+name: Generate Static Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        default: 'World'
+        required: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+        cache: 'npm'
+    - run: npm install -g ghost-static-site-generator
+    - run: gssg --domain https://help.testapp.io -url https://help.superjambo.net
+    - name: GitHub Push
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: 
+        branch: main
+        directory: static
