@@ -1,3 +1,4 @@
+[![Generate Static Pages](https://github.com/Jianbo-Zhu/cloudflare-page-sample/actions/workflows/Generate-static-pages.yml/badge.svg)](https://github.com/Jianbo-Zhu/cloudflare-page-sample/actions/workflows/Generate-static-pages.yml)
 # Integrate Ghost with Cloudflare
 1. Export Ghost content with gssg into static pages
 2. store the static pages in Github repository

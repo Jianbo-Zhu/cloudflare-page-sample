@@ -12,8 +12,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: apt update
-    - run: apt install nodejs npm
+    - run: sudo apt update
+    - run: sudo apt install nodejs npm
     - run: npm install -g ghost-static-site-generator
     - run: gssg --domain https://help.testapp.io -url https://help.superjambo.net
     - name: GitHub Push
